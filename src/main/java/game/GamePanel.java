@@ -1,6 +1,3 @@
-// Pac-Man: Next Gen
-// Maksym Yakushechkin CTS3
-
 /** This class contains game loop, maze array, the logic of drawing: maze and hearts */
 
 package game;
@@ -131,7 +128,7 @@ public class GamePanel extends JPanel implements ActionListener {
     public void endGame(Graphics g){
         isGameOver = true;
         Color textColor = new Color(170, 150, 0);
-        if(!areDotesExist()){
+        if(!areDotsExist()){
             g.setColor(textColor);
             g.setFont(new Font("Arial", Font.PLAIN, 30));
             g.drawString("YOU WОN", 265, 433);
@@ -142,7 +139,7 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
     
-    public boolean areDotesExist(){     // to finish the game, if dotes are not exists anymore 
+    public boolean areDotsExist(){     // to finish the game, if dots are not exists anymore
         for(int i = 0; i < maze.length; i++) {
             for(int k = 0; k < maze[i].length; k++) {
                 if(maze[i][k].equals("2") || maze[i][k].equals("3")) {
@@ -153,11 +150,11 @@ public class GamePanel extends JPanel implements ActionListener {
         return false;
     }
 
-    public void isSameCellWithDotesOrGhosts(Graphics g){
+    public void isSameCellWithDotsOrGhosts(Graphics g){
         int currentX = pacman.getX() / cellSize;
         int currentY = pacman.getY() / cellSize;
 
-        if (maze[currentY][currentX].equals("2")) {     // if pacman has eaten dote, it become to be just black cell
+        if (maze[currentY][currentX].equals("2")) {     // if pacman has eaten dot, it become to be just black cell
             maze[currentY][currentX] = "0";
             points = points + 5;
         } else if (maze[currentY][currentX].equals("3")) {
@@ -389,13 +386,13 @@ public class GamePanel extends JPanel implements ActionListener {
             }
         }
 
-        if(!areDotesExist()){
+        if(!areDotsExist()){
             endGame(g);
             return;
         }
 
         if (!isGameOver && pacman.getDirection() != 4 && pacman != null) {
-            isSameCellWithDotesOrGhosts(g);
+            isSameCellWithDotsOrGhosts(g);
 
             setNewDirection();
             pacman.checkNextStep(pacman.getDirection());

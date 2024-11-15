@@ -1,6 +1,3 @@
-/** Pac-Man: Next Gen
- *  Created by Maksym Yakushechkin from CTS3 */
-
 package game;
 
 import javax.swing.*;
