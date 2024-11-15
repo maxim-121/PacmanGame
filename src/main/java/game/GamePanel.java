@@ -1,3 +1,6 @@
+// Pac-Man: Next Gen
+// Maksym Yakushechkin CTS3
+
 /** This class contains game loop, maze array, the logic of drawing: maze and hearts */
 
 package game;
@@ -391,26 +394,28 @@ public class GamePanel extends JPanel implements ActionListener {
             return;
         }
 
-        if (!isGameOver && pacman.getDirection() != 4 && pacman != null) {
-            isSameCellWithDotsOrGhosts(g);
+        if(pacman != null) {
+            if (!isGameOver && pacman.getDirection() != 4) {
+                isSameCellWithDotsOrGhosts(g);
 
-            setNewDirection();
-            pacman.checkNextStep(pacman.getDirection());
+                setNewDirection();
+                pacman.checkNextStep(pacman.getDirection());
 
-            ghost1.setDirectionGhost("W2");
-            ghost1.checkNextStep(ghost1.getDirection(), "W2");
-            ghost2.setDirectionGhost("W1");
-            ghost2.checkNextStep(ghost2.getDirection(), "W1");
-            ghost3.setDirectionGhost("W1");
-            ghost3.checkNextStep(ghost3.getDirection(), "W1");
-            ghost4.setDirectionGhost("W2");
-            ghost4.checkNextStep(ghost4.getDirection(), "W2");
+                ghost1.setDirectionGhost("W2");
+                ghost1.checkNextStep(ghost1.getDirection(), "W2");
+                ghost2.setDirectionGhost("W1");
+                ghost2.checkNextStep(ghost2.getDirection(), "W1");
+                ghost3.setDirectionGhost("W1");
+                ghost3.checkNextStep(ghost3.getDirection(), "W1");
+                ghost4.setDirectionGhost("W2");
+                ghost4.checkNextStep(ghost4.getDirection(), "W2");
 
-        } else if (pacman.getDirection() == 4){
-            Color textColor = new Color(170, 150, 0);
-            g.setColor(textColor);
-            g.setFont(new Font("Arial", Font.PLAIN, 30));
-            g.drawString("GET READY", 255, 433);
+            } else if (pacman.getDirection() == 4) {
+                Color textColor = new Color(170, 150, 0);
+                g.setColor(textColor);
+                g.setFont(new Font("Arial", Font.PLAIN, 30));
+                g.drawString("GET READY", 255, 433);
+            }
         }
 
 

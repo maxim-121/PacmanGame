@@ -1,3 +1,6 @@
+// Pac-Man: Next Gen
+// Maksym Yakushechkin CTS3
+
 /** This class contains methods of pacman movements and drawing */
 
 package game.entities;
