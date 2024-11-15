@@ -1,6 +1,3 @@
-// Pac-Man: Next Gen
-// Maksym Yakushechkin CTS3
-
 package game;
 
 import javax.swing.*;

@@ -1,6 +1,3 @@
-// Pac-Man: Next Gen
-// Maksym Yakushechkin CTS3
-
 /** This class contains methods of ghost movements and drawing */
 
 package game.entities;

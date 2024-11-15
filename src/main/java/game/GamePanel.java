@@ -1,6 +1,3 @@
-// Pac-Man: Next Gen
-// Maksym Yakushechkin CTS3
-
 /** This class contains game loop, maze array, the logic of drawing: maze and hearts */
 
 package game;
